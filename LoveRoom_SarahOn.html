@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Room de Sarah on</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f8c8dc;
+            font-family: 'Courier New', cursive;
+            padding: 30px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.3em;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 1em;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff85c1;
+        }
+        .fade {
+            animation: fadeIn 4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fade">Bienvenue dans la Love Room 💖</h1>
+    <p class="fade">Ferme les yeux... Respire... Et laisse-moi te faire vibrer... corps et âme 😘</p>
+
+    <button onclick="vibratePattern()">Fais-moi vibrer 😏</button>
+    <button onclick="speak('Mon amour, ce moment est à toi. Ferme les yeux et ressens-moi tout près...')">Parle-moi 😍</button>
+
+    <script>
+        function vibratePattern() {
+            if (navigator.vibrate) {
+                navigator.vibrate([300, 150, 500, 150, 700]);
+            } else {
+                alert("La vibration n'est pas supportée sur cet appareil.");
+            }
+        }
+
+        function speak(text) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            synth.speak(utterance);
+        }
+    </script>
+</body>
+</html>

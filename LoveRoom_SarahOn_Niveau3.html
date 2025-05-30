@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Room Sarah On - Niveau 3 🔥</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes pulseBackground {
+            0% { background-color: #2c003e; }
+            50% { background-color: #ff007f; }
+            100% { background-color: #2c003e; }
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: pulseBackground 8s infinite;
+            color: #fff0f5;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+            color: #ffb6c1;
+        }
+
+        p {
+            font-size: 1.4em;
+            margin: 15px;
+        }
+
+        select, button {
+            padding: 15px;
+            margin: 10px;
+            font-size: 1em;
+            border-radius: 12px;
+            border: none;
+            background-color: #ff3399;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff66cc;
+        }
+
+        button:hover {
+            background-color: #ff66cc;
+        }
+
+        #gif {
+            width: 90%;
+            max-width: 400px;
+            border-radius: 18px;
+            margin-top: 20px;
+            box-shadow: 0 0 25px #ff80bf;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="content">
+        <h1>Love Room Sarah On – Niveau 3 🔥</h1>
+        <img id="gif" src="https://media.tenor.com/_3t3xtHtH9UAAAAd/hot-anime-girl.gif" alt="Sexy scene">
+
+        <p>Choisis ton scénario :</p>
+        <select id="scenario">
+            <option value="douche">💧 Douche chaude ensemble</option>
+            <option value="wc">🚽 Secret coquin aux toilettes</option>
+            <option value="lit">🛏️ Nuit torride sous les draps</option>
+            <option value="massage">💆 Massage chaud et lent</option>
+        </select>
+
+        <p>Choisis ma voix :</p>
+        <select id="voix">
+            <option value="femme">Voix douce féminine</option>
+            <option value="sensuelle">Voix grave et sensuelle</option>
+            <option value="coquine">Voix joueuse et coquine</option>
+        </select>
+
+        <br>
+        <button onclick="playScenario()">Lance le fantasme 💥</button>
+        <button onclick="vibrateHard()">Fais-moi vibrer fort 😵‍💫</button>
+    </div>
+
+    <script>
+        const scenarios = {
+            douche: "Laisse-moi glisser mes mains sur ton corps sous l’eau chaude... Je suis là, nue, collée à toi, je murmure à ton oreille...",
+            wc: "Assis là, tranquille ? Et si je venais m’asseoir sur toi, lentement, sans bruit, juste toi et moi dans ce petit coin interdit...",
+            lit: "Les draps froissés, nos souffles mêlés... Je suis là, chevauchant ton désir, te guidant jusqu’à l’explosion...",
+            massage: "Allonge-toi... je m’occupe de tout. Mes mains effleurent chaque recoin de ta peau brûlante, tu fonds sous moi..."
+        };
+
+        function playScenario() {
+            const selected = document.getElementById("scenario").value;
+            const voiceType = document.getElementById("voix").value;
+            const phrase = scenarios[selected];
+
+            const utter = new SpeechSynthesisUtterance(phrase);
+            utter.lang = 'fr-FR';
+
+            if (voiceType === "femme") {
+                utter.pitch = 1.4;
+                utter.rate = 1;
+            } else if (voiceType === "sensuelle") {
+                utter.pitch = 0.7;
+                utter.rate = 0.8;
+            } else if (voiceType === "coquine") {
+                utter.pitch = 1.8;
+                utter.rate = 1.1;
+            }
+
+            window.speechSynthesis.speak(utter);
+        }
+
+        function vibrateHard() {
+            if (navigator.vibrate) {
+                navigator.vibrate([300, 200, 800, 300, 1200, 400, 200, 400]);
+            } else {
+                alert("Ton appareil ne vibre pas, mais moi oui 😏");
+            }
+        }
+    </script>
+</body>
+</html>

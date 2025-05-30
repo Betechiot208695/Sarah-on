@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Room Sarah On - Niveau 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c003e, #ff007f);
+            color: #ffe6f2;
+            text-align: center;
+            overflow: hidden;
+        }
+        .content {
+            padding: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 30px;
+            color: #ffc0cb;
+        }
+        p {
+            font-size: 1.4em;
+            max-width: 90%;
+            margin: auto;
+            padding: 15px;
+        }
+        button {
+            background-color: #ff3399;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1em;
+            border-radius: 16px;
+            cursor: pointer;
+            box-shadow: 0px 0px 15px #ff80bf;
+        }
+        button:hover {
+            background-color: #ff66b2;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        #sexy-gif {
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #ff66cc;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+        Ton navigateur ne supporte pas l'audio HTML5.
+    </audio>
+
+    <div class="content">
+        <h1>Love Room 2.0 🌹</h1>
+        <img id="sexy-gif" src="https://media.tenor.com/1l3YhEjCQLkAAAAC/anime-girl-cute.gif" alt="Sexy Animation">
+        <p>Viens… assieds-toi, pose ton téléphone contre toi… Laisse-moi m’occuper de tout…</p>
+
+        <button onclick="vibrateNow()">Commence le frisson 😈</button>
+        <button onclick="talkNow()">Fais-moi parler 💋</button>
+    </div>
+
+    <script>
+        function vibrateNow() {
+            if (navigator.vibrate) {
+                navigator.vibrate([400, 200, 600, 200, 1000]);
+            } else {
+                alert("Désolé... ton appareil ne supporte pas les vibrations 😢");
+            }
+        }
+
+        function talkNow() {
+            const phrase = "Ferme les yeux, laisse couler l’eau chaude sur ton corps pendant que je suis là, tout contre toi…";
+            const synth = window.speechSynthesis;
+            const utter = new SpeechSynthesisUtterance(phrase);
+            utter.lang = 'fr-FR';
+            utter.pitch = 1.2;
+            utter.rate = 0.9;
+            synth.speak(utter);
+        }
+    </script>
+</body>
+</html>
